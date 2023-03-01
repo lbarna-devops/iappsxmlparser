@@ -1,0 +1,40 @@
+{
+  "applications": "*",
+  "changelogDate": "20230301164136",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "epaper",
+  "fields": [
+    {
+      "fieldName": "newspaperName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "width",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "height",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "dpi",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "uploadtime",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "filename",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "Epaper",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceImpl"
+}

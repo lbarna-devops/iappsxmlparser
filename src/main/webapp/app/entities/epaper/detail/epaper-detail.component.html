@@ -1,0 +1,52 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="epaper">
+      <h2 data-cy="epaperDetailsHeading"><span>Epaper</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span>ID</span></dt>
+        <dd>
+          <span>{{ epaper.id }}</span>
+        </dd>
+        <dt><span>Newspaper Name</span></dt>
+        <dd>
+          <span>{{ epaper.newspaperName }}</span>
+        </dd>
+        <dt><span>Width</span></dt>
+        <dd>
+          <span>{{ epaper.width }}</span>
+        </dd>
+        <dt><span>Height</span></dt>
+        <dd>
+          <span>{{ epaper.height }}</span>
+        </dd>
+        <dt><span>Dpi</span></dt>
+        <dd>
+          <span>{{ epaper.dpi }}</span>
+        </dd>
+        <dt><span>Uploadtime</span></dt>
+        <dd>
+          <span>{{ epaper.uploadtime }}</span>
+        </dd>
+        <dt><span>Filename</span></dt>
+        <dd>
+          <span>{{ epaper.filename }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/epaper', epaper.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

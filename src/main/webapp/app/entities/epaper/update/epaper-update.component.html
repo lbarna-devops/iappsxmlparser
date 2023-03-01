@@ -1,0 +1,76 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-epaper-heading" data-cy="EpaperCreateUpdateHeading">Create or edit a Epaper</h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_newspaperName">Newspaper Name</label>
+          <input
+            type="text"
+            class="form-control"
+            name="newspaperName"
+            id="field_newspaperName"
+            data-cy="newspaperName"
+            formControlName="newspaperName"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_width">Width</label>
+          <input type="number" class="form-control" name="width" id="field_width" data-cy="width" formControlName="width" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_height">Height</label>
+          <input type="number" class="form-control" name="height" id="field_height" data-cy="height" formControlName="height" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_dpi">Dpi</label>
+          <input type="number" class="form-control" name="dpi" id="field_dpi" data-cy="dpi" formControlName="dpi" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_uploadtime">Uploadtime</label>
+          <input
+            type="text"
+            class="form-control"
+            name="uploadtime"
+            id="field_uploadtime"
+            data-cy="uploadtime"
+            formControlName="uploadtime"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_filename">Filename</label>
+          <input type="text" class="form-control" name="filename" id="field_filename" data-cy="filename" formControlName="filename" />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span>Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span>Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

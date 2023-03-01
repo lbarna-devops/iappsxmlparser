@@ -1,0 +1,13 @@
+
+entity Epaper {
+	newspaperName String
+    width Integer
+    height Integer
+    dpi Integer
+    uploadtime String // should be LocalDate...
+    filename String
+}
+
+paginate Epaper with pagination
+filter Epaper
+service all with serviceImpl
